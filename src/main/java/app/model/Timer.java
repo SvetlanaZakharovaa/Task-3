@@ -1,10 +1,20 @@
 package app.model;
 
-public class Timer {
 
-    private Long nanoTime = System.nanoTime();
+
+import org.springframework.stereotype.Component;
+import java.time.LocalTime;
+
+@Component                             // Определяем как Spring-бин
+public class Timer {
+    private final LocalTime time;
+
+    public Timer() {
+        this.time = LocalTime.now(); // Сохраняем текущее время при создании объекта
+    }
 
     public Long getTime() {
-        return nanoTime;
+        return (long) time.getNano(); // Возвращаем сохранённое время
     }
 }
+

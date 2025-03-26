@@ -8,4 +8,10 @@ public class Cat extends Animal {
     public String toString() {
         return "Im a Cat";
     }
+
+    @Override
+    public String makeSound() {
+        return "Wow";
+    }
+
 }
